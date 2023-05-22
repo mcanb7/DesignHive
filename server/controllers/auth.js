@@ -23,11 +23,13 @@ export const register = async ( req, res ) =>{
             firstName,
             lastName,
             email,
-            password,
+            password: passwordHash,
             picturePath,
             friends,
             location,
-            occupation
+            occupation,
+            viewedProfile: Math.floor(Math.random() * 10000),
+            impressions: Math.floor(Math.random() * 10000),
         })
 
         const savedUser = await newUser.save();
